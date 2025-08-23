@@ -1,9 +1,11 @@
-[gd_scene load_steps=34 format=4 uid="uid://hjrjm8eisbea"]
+[gd_scene load_steps=36 format=4 uid="uid://hjrjm8eisbea"]
 
 [ext_resource type="Texture2D" uid="uid://np4mjwopx2xj" path="res://Textures/woodPlatform.png" id="1_6qcs5"]
 [ext_resource type="PackedScene" uid="uid://ilo361v6uty5" path="res://Prefab/player.tscn" id="2_kevur"]
 [ext_resource type="Texture2D" uid="uid://nfc3ntl253mc" path="res://Textures/slotmachinebg.png" id="3_7c4gc"]
 [ext_resource type="Texture2D" uid="uid://dn28u6clxvoq6" path="res://Textures/TimCasino.png" id="4_c1bf8"]
+[ext_resource type="PackedScene" uid="uid://dka2xxob1qpdj" path="res://Prefab/Environment/RedButton.tscn" id="5_u6kdx"]
+[ext_resource type="PackedScene" uid="uid://dcfoxclgitbia" path="res://Prefab/Environment/GreenButton.tscn" id="6_048ml"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c06nu"]
 texture = ExtResource("1_6qcs5")
@@ -277,3 +279,11 @@ frame_progress = 0.0506959
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(0, -162)
 zoom = Vector2(1.8, 1.8)
+
+[node name="RedButton" parent="." instance=ExtResource("5_u6kdx")]
+top_level = true
+position = Vector2(-55, 0)
+
+[node name="GreenButton" parent="." instance=ExtResource("6_048ml")]
+top_level = true
+position = Vector2(58, 0)
