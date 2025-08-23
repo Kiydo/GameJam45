@@ -1,9 +1,9 @@
-[gd_scene load_steps=21 format=4 uid="uid://hjrjm8eisbea"]
+[gd_scene load_steps=10 format=4 uid="uid://hjrjm8eisbea"]
 
 [ext_resource type="Texture2D" uid="uid://np4mjwopx2xj" path="res://Textures/woodPlatform.png" id="1_6qcs5"]
 [ext_resource type="PackedScene" uid="uid://ilo361v6uty5" path="res://Prefab/Player/player.tscn" id="2_kevur"]
 [ext_resource type="PackedScene" uid="uid://bbgnywm2s1xwj" path="res://Prefab/Environment/slots.tscn" id="3_epiwc"]
-[ext_resource type="Texture2D" uid="uid://dn28u6clxvoq6" path="res://Textures/TimCasino.png" id="4_c1bf8"]
+[ext_resource type="PackedScene" uid="uid://c3hul4sqgejbo" path="res://Prefab/Environment/tim.tscn" id="4_gguqi"]
 [ext_resource type="PackedScene" uid="uid://dka2xxob1qpdj" path="res://Prefab/Environment/RedButton.tscn" id="5_u6kdx"]
 [ext_resource type="PackedScene" uid="uid://dcfoxclgitbia" path="res://Prefab/Environment/GreenButton.tscn" id="6_048ml"]
 [ext_resource type="PackedScene" uid="uid://dqwrmffwmi7lf" path="res://Prefab/Environment/FallBypass.tscn" id="7_hgn2a"]
@@ -21,104 +21,6 @@ texture = ExtResource("1_6qcs5")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_c06nu")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7uiqu"]
-atlas = ExtResource("4_c1bf8")
-region = Rect2(640, 180, 320, 180)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_i4s65"]
-atlas = ExtResource("4_c1bf8")
-region = Rect2(960, 180, 320, 180)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_slsug"]
-atlas = ExtResource("4_c1bf8")
-region = Rect2(0, 360, 320, 180)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0bmtr"]
-atlas = ExtResource("4_c1bf8")
-region = Rect2(320, 360, 320, 180)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ixuwl"]
-atlas = ExtResource("4_c1bf8")
-region = Rect2(640, 0, 320, 180)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bpauv"]
-atlas = ExtResource("4_c1bf8")
-region = Rect2(960, 0, 320, 180)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_f1h5k"]
-atlas = ExtResource("4_c1bf8")
-region = Rect2(0, 180, 320, 180)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ykrkl"]
-atlas = ExtResource("4_c1bf8")
-region = Rect2(320, 180, 320, 180)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_osden"]
-atlas = ExtResource("4_c1bf8")
-region = Rect2(0, 0, 320, 180)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qi61d"]
-atlas = ExtResource("4_c1bf8")
-region = Rect2(320, 0, 320, 180)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_tgc1s"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7uiqu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_i4s65")
-}],
-"loop": true,
-"name": &"+1up",
-"speed": 3.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_slsug")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0bmtr")
-}],
-"loop": true,
-"name": &"+2up",
-"speed": 3.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ixuwl")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bpauv")
-}],
-"loop": true,
-"name": &"-1down",
-"speed": 3.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_f1h5k")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ykrkl")
-}],
-"loop": true,
-"name": &"-2down",
-"speed": 3.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_osden")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qi61d")
-}],
-"loop": true,
-"name": &"neutral",
-"speed": 3.0
-}]
-
 [node name="BaseLevel" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -131,15 +33,7 @@ top_level = true
 
 [node name="Slots" parent="." instance=ExtResource("3_epiwc")]
 
-[node name="Tim" type="AnimatedSprite2D" parent="."]
-show_behind_parent = true
-light_mask = 4
-visibility_layer = 4
-position = Vector2(-1, -162)
-scale = Vector2(2, 2)
-sprite_frames = SubResource("SpriteFrames_tgc1s")
-animation = &"+1up"
-autoplay = "neutral"
+[node name="Tim" parent="." instance=ExtResource("4_gguqi")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(0, -162)

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b15iyy7vvel86"]
+
+[ext_resource type="PackedScene" uid="uid://hjrjm8eisbea" path="res://Scene/Stages/baseLevel.tscn" id="1_ugs1q"]
+[ext_resource type="PackedScene" uid="uid://ds6p2pnkwrk5f" path="res://Prefab/Environment/FakeRedButton.tscn" id="2_t2pu8"]
+
+[node name="BaseLevel" instance=ExtResource("1_ugs1q")]
+
+[node name="RedButton" parent="." index="5"]
+position = Vector2(57, 0)
+
+[node name="GreenButton" parent="." index="6"]
+position = Vector2(1178, 134)
+
+[node name="FakeRedButton" parent="." index="8" instance=ExtResource("2_t2pu8")]
+position = Vector2(-54, 0)
