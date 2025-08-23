@@ -1,0 +1,61 @@
+[gd_scene load_steps=8 format=3 uid="uid://ci8346v45m48q"]
+
+[ext_resource type="Script" path="res://Scripts/Environment/fake_floor.gd" id="1_771yl"]
+[ext_resource type="Texture2D" uid="uid://np4mjwopx2xj" path="res://Textures/woodPlatform.png" id="1_f0x4s"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5j2hw"]
+atlas = ExtResource("1_f0x4s")
+region = Rect2(141, 22, 47, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_skno1"]
+atlas = ExtResource("1_f0x4s")
+region = Rect2(94, 44, 47, 22)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5q774"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5j2hw")
+}],
+"loop": true,
+"name": &"break",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_skno1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dla1h"]
+size = Vector2(33, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pjkkl"]
+size = Vector2(31, 18)
+
+[node name="FakeFloor" type="CharacterBody2D"]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_771yl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_5q774")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-5.5, 2)
+shape = SubResource("RectangleShape2D_dla1h")
+
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(-5.5, 2)
+shape = SubResource("RectangleShape2D_pjkkl")
+
+[connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]

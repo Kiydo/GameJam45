@@ -1,7 +1,7 @@
 [gd_scene load_steps=21 format=4 uid="uid://hjrjm8eisbea"]
 
 [ext_resource type="Texture2D" uid="uid://np4mjwopx2xj" path="res://Textures/woodPlatform.png" id="1_6qcs5"]
-[ext_resource type="PackedScene" uid="uid://ilo361v6uty5" path="res://Prefab/player.tscn" id="2_kevur"]
+[ext_resource type="PackedScene" uid="uid://ilo361v6uty5" path="res://Prefab/Player/player.tscn" id="2_kevur"]
 [ext_resource type="PackedScene" uid="uid://bbgnywm2s1xwj" path="res://Prefab/Environment/slots.tscn" id="3_epiwc"]
 [ext_resource type="Texture2D" uid="uid://dn28u6clxvoq6" path="res://Textures/TimCasino.png" id="4_c1bf8"]
 [ext_resource type="PackedScene" uid="uid://dka2xxob1qpdj" path="res://Prefab/Environment/RedButton.tscn" id="5_u6kdx"]
