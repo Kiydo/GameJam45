@@ -260,10 +260,8 @@ visibility_layer = 4
 position = Vector2(0, -162)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_21tro")
-animation = &"lose2"
+animation = &"spinning"
 autoplay = "spinning"
-frame = 3
-frame_progress = 1.0
 
 [node name="Tim" type="AnimatedSprite2D" parent="."]
 show_behind_parent = true
