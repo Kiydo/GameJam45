@@ -1,8 +1,8 @@
-[gd_scene load_steps=36 format=4 uid="uid://hjrjm8eisbea"]
+[gd_scene load_steps=20 format=4 uid="uid://hjrjm8eisbea"]
 
 [ext_resource type="Texture2D" uid="uid://np4mjwopx2xj" path="res://Textures/woodPlatform.png" id="1_6qcs5"]
 [ext_resource type="PackedScene" uid="uid://ilo361v6uty5" path="res://Prefab/player.tscn" id="2_kevur"]
-[ext_resource type="Texture2D" uid="uid://nfc3ntl253mc" path="res://Textures/slotmachinebg.png" id="3_7c4gc"]
+[ext_resource type="PackedScene" uid="uid://bbgnywm2s1xwj" path="res://Prefab/Environment/slots.tscn" id="3_epiwc"]
 [ext_resource type="Texture2D" uid="uid://dn28u6clxvoq6" path="res://Textures/TimCasino.png" id="4_c1bf8"]
 [ext_resource type="PackedScene" uid="uid://dka2xxob1qpdj" path="res://Prefab/Environment/RedButton.tscn" id="5_u6kdx"]
 [ext_resource type="PackedScene" uid="uid://dcfoxclgitbia" path="res://Prefab/Environment/GreenButton.tscn" id="6_048ml"]
@@ -19,134 +19,6 @@ texture = ExtResource("1_6qcs5")
 [sub_resource type="TileSet" id="TileSet_u6h83"]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_c06nu")
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4q4pm"]
-atlas = ExtResource("3_7c4gc")
-region = Rect2(1280, 180, 320, 180)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_q5a55"]
-atlas = ExtResource("3_7c4gc")
-region = Rect2(0, 360, 320, 180)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_e0qot"]
-atlas = ExtResource("3_7c4gc")
-region = Rect2(320, 360, 320, 180)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_e8ee3"]
-atlas = ExtResource("3_7c4gc")
-region = Rect2(640, 360, 320, 180)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yvi61"]
-atlas = ExtResource("3_7c4gc")
-region = Rect2(960, 360, 320, 180)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ljbxm"]
-atlas = ExtResource("3_7c4gc")
-region = Rect2(1280, 360, 320, 180)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_acm1r"]
-atlas = ExtResource("3_7c4gc")
-region = Rect2(0, 540, 320, 180)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_po0fm"]
-atlas = ExtResource("3_7c4gc")
-region = Rect2(320, 540, 320, 180)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_iyy4p"]
-atlas = ExtResource("3_7c4gc")
-region = Rect2(320, 0, 320, 180)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_be7ss"]
-atlas = ExtResource("3_7c4gc")
-region = Rect2(640, 0, 320, 180)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ub0ks"]
-atlas = ExtResource("3_7c4gc")
-region = Rect2(960, 0, 320, 180)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_oggk4"]
-atlas = ExtResource("3_7c4gc")
-region = Rect2(0, 180, 320, 180)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mxa23"]
-atlas = ExtResource("3_7c4gc")
-region = Rect2(320, 180, 320, 180)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yr0f8"]
-atlas = ExtResource("3_7c4gc")
-region = Rect2(640, 180, 320, 180)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ro220"]
-atlas = ExtResource("3_7c4gc")
-region = Rect2(960, 180, 320, 180)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_21tro"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4q4pm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_q5a55")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_e0qot")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_e8ee3")
-}],
-"loop": false,
-"name": &"lose1",
-"speed": 8.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yvi61")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ljbxm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_acm1r")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_po0fm")
-}],
-"loop": false,
-"name": &"lose2",
-"speed": 8.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_iyy4p")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_be7ss")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ub0ks")
-}],
-"loop": true,
-"name": &"spinning",
-"speed": 8.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_oggk4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mxa23")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yr0f8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ro220")
-}],
-"loop": false,
-"name": &"win",
-"speed": 8.0
-}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7uiqu"]
 atlas = ExtResource("4_c1bf8")
@@ -256,14 +128,7 @@ tile_set = SubResource("TileSet_u6h83")
 [node name="Player" parent="." instance=ExtResource("2_kevur")]
 top_level = true
 
-[node name="Slots" type="AnimatedSprite2D" parent="."]
-light_mask = 4
-visibility_layer = 4
-position = Vector2(0, -162)
-scale = Vector2(2, 2)
-sprite_frames = SubResource("SpriteFrames_21tro")
-animation = &"spinning"
-autoplay = "spinning"
+[node name="Slots" parent="." instance=ExtResource("3_epiwc")]
 
 [node name="Tim" type="AnimatedSprite2D" parent="."]
 show_behind_parent = true
