@@ -137,9 +137,8 @@ visibility_layer = 4
 position = Vector2(-1, -162)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_tgc1s")
-animation = &"-2down"
+animation = &"+1up"
 autoplay = "neutral"
-frame_progress = 0.0506959
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(0, -162)

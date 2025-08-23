@@ -5,7 +5,7 @@ var coin_flip : float = 0.5
 
 enum State {SUCCESS, FAIL}
 var current_state : State
-var animation_trigger : bool = false
+var button_pressed : bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -16,12 +16,13 @@ func _ready() -> void:
 
 func recive_roll(result):
 	print("putting in roll")
-	if result == true:
-		print("in")
-		current_state = State.SUCCESS
-	else:
-		current_state = State.FAIL
-	slot_animation()
+	while button_pressed == false:
+		if result == true:
+			print("in")
+			current_state = State.SUCCESS
+		else:
+			current_state = State.FAIL
+		slot_animation()
 
 func slot_animation():
 	if current_state == State.SUCCESS:
@@ -35,6 +36,7 @@ func slot_animation():
 		else:
 			print("playing failed animation 2")
 			play("failTwo")
+	button_pressed = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
