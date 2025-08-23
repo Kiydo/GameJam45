@@ -1,0 +1,92 @@
+[gd_scene load_steps=12 format=3 uid="uid://ilo361v6uty5"]
+
+[ext_resource type="Texture2D" uid="uid://cjxxfis0h2d0r" path="res://Textures/LadyLuckIdle.png" id="1_m5v2v"]
+[ext_resource type="Texture2D" uid="uid://c182ms4o0b3pw" path="res://Textures/LadyLuckMovement.png" id="2_pilq8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_26y1k"]
+atlas = ExtResource("1_m5v2v")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_evkkw"]
+atlas = ExtResource("1_m5v2v")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p0o1i"]
+atlas = ExtResource("1_m5v2v")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ms8i"]
+atlas = ExtResource("2_pilq8")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dbavo"]
+atlas = ExtResource("2_pilq8")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0gym1"]
+atlas = ExtResource("2_pilq8")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kuyin"]
+atlas = ExtResource("2_pilq8")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jy4te"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_26y1k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_evkkw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_26y1k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_evkkw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_26y1k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p0o1i")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ms8i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dbavo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0gym1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kuyin")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 6.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n72pr"]
+radius = 11.0
+height = 46.0
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -22)
+sprite_frames = SubResource("SpriteFrames_jy4te")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -23)
+shape = SubResource("CapsuleShape2D_n72pr")
