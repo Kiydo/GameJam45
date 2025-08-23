@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqwrmffwmi7lf"]
+
+[ext_resource type="Script" path="res://Scripts/Environment/fall_bypass.gd" id="1_ckard"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3lxv7"]
+size = Vector2(3956, 101)
+
+[node name="FallBypass" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_ckard")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1968, -40.5)
+shape = SubResource("RectangleShape2D_3lxv7")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
