@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 GlobalMusicPlayer="*res://Prefab/AudioPrefab/GlobalMusicPlayer.tscn"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [global_group]
 
 Player=""
