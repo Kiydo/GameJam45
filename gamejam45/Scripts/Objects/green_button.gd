@@ -1,6 +1,6 @@
 extends CharacterBody2D
 @export var character_body_2d : CharacterBody2D = null
-@export var success_chance : float = 0.5
+@export var success_chance : float = 0.65
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 #@onready var slots = preload("res://Prefab/Environment/slots.gd").new
