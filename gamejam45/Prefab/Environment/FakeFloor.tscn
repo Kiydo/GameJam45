@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://ci8346v45m48q"]
+[gd_scene load_steps=9 format=3 uid="uid://ci8346v45m48q"]
 
 [ext_resource type="Script" path="res://Scripts/Environment/fake_floor.gd" id="1_771yl"]
 [ext_resource type="Texture2D" uid="uid://np4mjwopx2xj" path="res://Textures/woodPlatform.png" id="1_f0x4s"]
+[ext_resource type="AudioStream" uid="uid://cvgglgiht37cv" path="res://Audio/what.mp3" id="3_m1g8b"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5j2hw"]
 atlas = ExtResource("1_f0x4s")
@@ -57,5 +58,12 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
 position = Vector2(-5.5, 2)
 shape = SubResource("RectangleShape2D_pjkkl")
+debug_color = Color(0.831759, 0.00139079, 0.941462, 0.42)
+
+[node name="AudioManager" type="Node" parent="."]
+
+[node name="break" type="AudioStreamPlayer" parent="AudioManager"]
+stream = ExtResource("3_m1g8b")
+volume_db = -8.988
 
 [connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://duwllxwue26i"]
+[gd_scene load_steps=6 format=3 uid="uid://duwllxwue26i"]
 
 [ext_resource type="Script" path="res://Scripts/UI/badend.gd" id="1_33o4j"]
 [ext_resource type="Texture2D" uid="uid://cki8ryvyqofov" path="res://Textures/slotmachinebgL.png" id="1_a85cf"]
+[ext_resource type="AudioStream" uid="uid://ys3133ncv1g3" path="res://Audio/gameover.mp3" id="3_cu0m4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ph42o"]
 atlas = ExtResource("1_a85cf")
@@ -64,5 +65,12 @@ offset_top = 139.0
 offset_right = 99.0
 offset_bottom = 170.0
 text = "Menu"
+
+[node name="AudioManager" type="Node" parent="."]
+
+[node name="GameOver" type="AudioStreamPlayer" parent="AudioManager"]
+stream = ExtResource("3_cu0m4")
+volume_db = -11.556
+autoplay = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

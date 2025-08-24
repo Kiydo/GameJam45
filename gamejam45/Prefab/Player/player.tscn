@@ -1,9 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://ilo361v6uty5"]
+[gd_scene load_steps=21 format=3 uid="uid://ilo361v6uty5"]
 
 [ext_resource type="Script" path="res://Scripts/Player/player.gd" id="1_fmkkt"]
 [ext_resource type="Texture2D" uid="uid://cjxxfis0h2d0r" path="res://Textures/LadyLuckIdle.png" id="2_kcjdu"]
 [ext_resource type="Texture2D" uid="uid://ddwdrkrfvqtgq" path="res://Textures/LadyLuckJump.png" id="3_ju8qj"]
 [ext_resource type="Texture2D" uid="uid://c182ms4o0b3pw" path="res://Textures/LadyLuckMovement.png" id="4_e1x4p"]
+[ext_resource type="AudioStream" uid="uid://dh2ruavc5sywh" path="res://Audio/jump.mp3" id="5_asqox"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_26y1k"]
 atlas = ExtResource("2_kcjdu")
@@ -15,6 +16,10 @@ region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p0o1i"]
 atlas = ExtResource("2_kcjdu")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_orvht"]
+atlas = ExtResource("3_ju8qj")
 region = Rect2(0, 64, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j5day"]
@@ -80,6 +85,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_orvht")
+}],
+"loop": true,
+"name": &"jump_air",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_j5day")
 }, {
 "duration": 1.0,
@@ -132,9 +145,15 @@ script = ExtResource("1_fmkkt")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -22)
 sprite_frames = SubResource("SpriteFrames_jy4te")
-animation = &"jump_start"
+animation = &"jump_air"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -23)
 shape = SubResource("CapsuleShape2D_n72pr")
+
+[node name="AudioManager" type="Node" parent="."]
+
+[node name="jump" type="AudioStreamPlayer" parent="AudioManager"]
+stream = ExtResource("5_asqox")
+volume_db = -10.272

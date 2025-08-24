@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bt84cnaysjyx6"]
+[gd_scene load_steps=6 format=3 uid="uid://bt84cnaysjyx6"]
 
 [ext_resource type="Texture2D" uid="uid://c57bkbisef6gy" path="res://Textures/TimCasinoGlasses.png" id="1_oo0in"]
 [ext_resource type="Script" path="res://Scripts/UI/stage_done.gd" id="1_poq5s"]
+[ext_resource type="AudioStream" uid="uid://nuskxgr8jnf" path="res://Audio/trueending.mp3" id="3_3gji4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b7fmp"]
 atlas = ExtResource("1_oo0in")
@@ -49,7 +50,9 @@ offset_top = -48.0
 offset_right = 56.0
 offset_bottom = 39.0
 theme_override_font_sizes/font_size = 8
-text = "While waiting for the slot machine, Tim had an existential crisis and left..."
+text = "While waiting for the slot machine, Tim had an existential crisis and left...
+
+Maybe gambling everything isn't the smartest thing"
 autowrap_mode = 3
 
 [node name="Button" type="Button" parent="."]
@@ -59,5 +62,12 @@ offset_right = 50.0
 offset_bottom = 73.0
 theme_override_font_sizes/font_size = 12
 text = "Menu"
+
+[node name="AudioManager" type="Node" parent="."]
+
+[node name="TrueEnding" type="AudioStreamPlayer" parent="AudioManager"]
+stream = ExtResource("3_3gji4")
+volume_db = -5.778
+autoplay = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

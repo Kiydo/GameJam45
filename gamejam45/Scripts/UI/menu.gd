@@ -2,7 +2,12 @@ extends Node2D
 #@onready var slot_machine = get_parent().get_node("SlotMachineMenu")
 @onready var slot_machine: Node = $SlotMachineMenu
 @onready var lever_clank: AudioStreamPlayer = $AudioManager/clank
-
+#@onready var menu_music: AudioStreamPlayer = $AudioManager/menuMusic
+#
+func _ready() -> void:
+	GlobalMusicPlayer.play_music()
+	#menu_music.play()
+	
 # Play Button
 func _on_play_pressed() -> void:
 	print("play button just pressed")

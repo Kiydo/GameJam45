@@ -1,5 +1,8 @@
 extends Node2D
 
+func _ready() -> void:
+	GlobalMusicPlayer.play_music()
+
 func _on_button_pressed() -> void:
 	var default_scene = "res://Scene/UI/menu.tscn"
 	print("loading about")

@@ -1,6 +1,7 @@
 extends CharacterBody2D
 @export var character_body_2d : CharacterBody2D = null
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var break_effect: AudioStreamPlayer = $AudioManager/break
 
 func _ready() -> void:
 	animated_sprite_2d.connect("animation_finished", Callable(self, "_on_animation_finished"))
@@ -9,3 +10,4 @@ func _ready() -> void:
 func _on_hurtbox_body_entered(body: Node2D) -> void:
 	print("floor broke")
 	animated_sprite_2d.play("break")
+	break_effect.play()

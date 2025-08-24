@@ -15,6 +15,10 @@ run/main_scene="res://Scene/UI/menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GlobalMusicPlayer="*res://Prefab/AudioPrefab/GlobalMusicPlayer.tscn"
+
 [global_group]
 
 Player=""

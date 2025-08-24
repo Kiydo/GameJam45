@@ -32,7 +32,7 @@ func _on_timer_timeout() -> void:
 		total_time_seconds += 1
 		var seconds: int = total_time_seconds
 		#print(seconds)
-		if seconds == 30:
+		if seconds == 30: # wait 30 secs for the true ending
 			var default_scene = "res://Scene/Stages/stageDone.tscn"
 			print("loading good ending")
 			call_deferred("change_scene", default_scene)
