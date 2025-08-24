@@ -1,7 +1,9 @@
-[gd_scene load_steps=19 format=3 uid="uid://bbgnywm2s1xwj"]
+[gd_scene load_steps=21 format=3 uid="uid://bbgnywm2s1xwj"]
 
 [ext_resource type="Texture2D" uid="uid://nfc3ntl253mc" path="res://Textures/slotmachinebg.png" id="1_600ww"]
 [ext_resource type="Script" path="res://Scripts/Environment/slots.gd" id="2_y6qvv"]
+[ext_resource type="AudioStream" uid="uid://k1tjg1sod8m1" path="res://Audio/casinoroll.mp3" id="3_w0uxt"]
+[ext_resource type="AudioStream" uid="uid://b7w8wqn8yeca2" path="res://Audio/slotpulled.mp3" id="4_7whwd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4q4pm"]
 atlas = ExtResource("1_600ww")
@@ -142,3 +144,15 @@ autoplay = "spinning"
 script = ExtResource("2_y6qvv")
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="AudioManager" type="Node" parent="."]
+
+[node name="CasinoRoll" type="AudioStreamPlayer" parent="AudioManager"]
+stream = ExtResource("3_w0uxt")
+volume_db = -5.778
+pitch_scale = 1.25
+parameters/looping = true
+
+[node name="SlotPulled" type="AudioStreamPlayer" parent="AudioManager"]
+stream = ExtResource("4_7whwd")
+volume_db = -8.988

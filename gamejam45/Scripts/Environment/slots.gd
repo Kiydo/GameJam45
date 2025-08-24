@@ -1,5 +1,7 @@
 extends AnimatedSprite2D
 #@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var casino_roll: AudioStreamPlayer = $AudioManager/CasinoRoll
+@onready var slot_pulled: AudioStreamPlayer = $AudioManager/SlotPulled
 
 var coin_flip : float = 0.5
 
@@ -19,7 +21,10 @@ func _ready() -> void:
 	connect("animation_finished", Callable(self, "_on_animation_finished"))
 	timer_node.timeout.connect(_on_timer_timeout)
 	timer_node.start()
+	slot_pulled.stop()
+	casino_roll.play()
 	randomize()
+	
 
 func _on_timer_timeout() -> void:
 	var current_scene_file = get_tree().current_scene.scene_file_path
@@ -44,6 +49,8 @@ func recive_roll(result):
 		slot_animation()
 
 func slot_animation():
+	casino_roll.stop()
+	slot_pulled.play()
 	if current_state == State.SUCCESS:
 		print("playing success animation")
 		play("win")

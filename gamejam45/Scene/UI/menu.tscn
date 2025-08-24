@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://ca0kv2j4v6hps"]
+[gd_scene load_steps=5 format=3 uid="uid://ca0kv2j4v6hps"]
 
 [ext_resource type="Script" path="res://Scripts/UI/menu.gd" id="1_4bmmr"]
 [ext_resource type="PackedScene" uid="uid://dqgnu7ipoxhlj" path="res://Prefab/UI/SlotMachineMenu.tscn" id="1_e4km4"]
 [ext_resource type="Texture2D" uid="uid://bdjvuo422clo5" path="res://Textures/Lady Luck banner2.png" id="3_jquen"]
+[ext_resource type="AudioStream" uid="uid://dkyi05qw27gxy" path="res://Audio/clank.mp3" id="4_r8w86"]
 
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_4bmmr")
@@ -47,6 +48,12 @@ position = Vector2(-76, -8)
 scale = Vector2(0.0941406, 0.0944444)
 texture = ExtResource("3_jquen")
 offset = Vector2(0, -600)
+
+[node name="AudioManager" type="Node" parent="."]
+
+[node name="clank" type="AudioStreamPlayer" parent="AudioManager"]
+stream = ExtResource("4_r8w86")
+volume_db = -5.778
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/About" to="." method="_on_about_pressed"]
