@@ -8,12 +8,30 @@ var current_state : State
 var button_pressed : bool = false
 var next_level_number
 
+@onready var timer_node: Timer = $Timer
+
+var total_time_seconds: int = 0
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var anims = get_sprite_frames().get_animation_names()
 	print("Available animations: ", anims)
 	connect("animation_finished", Callable(self, "_on_animation_finished"))
+	timer_node.timeout.connect(_on_timer_timeout)
+	timer_node.start()
 	randomize()
+
+func _on_timer_timeout() -> void:
+	var current_scene_file = get_tree().current_scene.scene_file_path
+	if current_scene_file == "res://Scene/Stages/stage0.tscn":
+		total_time_seconds += 1
+		var seconds: int = total_time_seconds
+		#print(seconds)
+		if seconds == 30:
+			var default_scene = "res://Scene/Stages/stageDone.tscn"
+			print("loading good ending")
+			call_deferred("change_scene", default_scene)
+		
 
 func recive_roll(result):
 	print("putting in roll")

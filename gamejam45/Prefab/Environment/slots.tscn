@@ -140,3 +140,5 @@ sprite_frames = SubResource("SpriteFrames_21tro")
 animation = &"failOne"
 autoplay = "spinning"
 script = ExtResource("2_y6qvv")
+
+[node name="Timer" type="Timer" parent="."]
