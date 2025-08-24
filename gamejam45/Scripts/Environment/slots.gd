@@ -50,6 +50,7 @@ func next_level():
 	else:
 		next_level_number = current_scene_file.to_int() - 1
 		print(next_level_number)
+	await get_tree().create_timer(4.0).timeout
 	var next_level_path = "res://Scene/Stages/stage" + str(next_level_number) + ".tscn"
 	call_deferred("change_scene", next_level_path)
 

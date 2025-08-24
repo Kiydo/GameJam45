@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://c3hul4sqgejbo"]
+[gd_scene load_steps=14 format=3 uid="uid://c3hul4sqgejbo"]
 
 [ext_resource type="Texture2D" uid="uid://dn28u6clxvoq6" path="res://Textures/TimCasino.png" id="1_337as"]
+[ext_resource type="Script" path="res://Scripts/Environment/tim.gd" id="2_twkmk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7uiqu"]
 atlas = ExtResource("1_337as")
@@ -109,3 +110,4 @@ scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_tgc1s")
 animation = &"+1up"
 autoplay = "neutral"
+script = ExtResource("2_twkmk")
