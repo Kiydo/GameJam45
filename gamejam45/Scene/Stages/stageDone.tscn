@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=3 uid="uid://bt84cnaysjyx6"]
+
+[ext_resource type="Texture2D" uid="uid://c57bkbisef6gy" path="res://Textures/TimCasinoGlasses.png" id="1_oo0in"]
+[ext_resource type="Script" path="res://Scripts/UI/stage_done.gd" id="1_poq5s"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b7fmp"]
+atlas = ExtResource("1_oo0in")
+region = Rect2(640, 180, 320, 180)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uhgem"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b7fmp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="StageDone" type="Node2D"]
+script = ExtResource("1_poq5s")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 15)
+sprite_frames = SubResource("SpriteFrames_uhgem")
+autoplay = "default"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -65.0
+offset_top = -76.0
+offset_right = 66.0
+offset_bottom = 44.0
+color = Color(0, 0, 0, 0.443137)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -48.0
+offset_top = -72.0
+offset_right = 50.0
+offset_bottom = -49.0
+text = "Good Ending"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = -55.0
+offset_top = -48.0
+offset_right = 56.0
+offset_bottom = 39.0
+theme_override_font_sizes/font_size = 8
+text = "While waiting for the slot machine, Tim had an existential crisis and left..."
+autowrap_mode = 3
+
+[node name="Button" type="Button" parent="."]
+offset_left = -50.0
+offset_top = 48.0
+offset_right = 50.0
+offset_bottom = 73.0
+theme_override_font_sizes/font_size = 12
+text = "Menu"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
