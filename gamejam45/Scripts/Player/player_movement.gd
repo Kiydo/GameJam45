@@ -2,10 +2,10 @@ extends Node
 
 enum State {IDLE, WALK, JUMP_START, JUMP_END}
 
-@export var SPEED : int = 40
-@export var GRAVITY : int = 200
+@export var SPEED : int = 70
+@export var GRAVITY : int = 300
 
-@export var JUMPFORCE : int = -120
+@export var JUMPFORCE : int = -180
 @export var JUMP_HORIZONTAL : int = 100
 
 var has_jumped : bool = false

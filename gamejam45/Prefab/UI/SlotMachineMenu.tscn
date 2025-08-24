@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://dqgnu7ipoxhlj"]
+
+[ext_resource type="Texture2D" uid="uid://bdq2jd6bgxi8j" path="res://Textures/slotmachine.png" id="1_8uym1"]
+[ext_resource type="Script" path="res://Scripts/UI/slot_machine_menu.gd" id="2_u8usg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4g28a"]
+atlas = ExtResource("1_8uym1")
+region = Rect2(0, 0, 380, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tli2a"]
+atlas = ExtResource("1_8uym1")
+region = Rect2(0, 0, 380, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hr0ht"]
+atlas = ExtResource("1_8uym1")
+region = Rect2(380, 0, 380, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sypap"]
+atlas = ExtResource("1_8uym1")
+region = Rect2(0, 180, 380, 180)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d2nac"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4g28a")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tli2a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hr0ht")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sypap")
+}],
+"loop": false,
+"name": &"play",
+"speed": 10.0
+}]
+
+[node name="SlotMachineMenu" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_d2nac")
+animation = &"play"
+autoplay = "idle"
+script = ExtResource("2_u8usg")

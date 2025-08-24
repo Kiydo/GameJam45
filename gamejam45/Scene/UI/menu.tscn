@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://ca0kv2j4v6hps"]
+
+[ext_resource type="Script" path="res://Scripts/UI/menu.gd" id="1_4bmmr"]
+[ext_resource type="PackedScene" uid="uid://dqgnu7ipoxhlj" path="res://Prefab/UI/SlotMachineMenu.tscn" id="1_e4km4"]
+[ext_resource type="Texture2D" uid="uid://bdjvuo422clo5" path="res://Textures/Lady Luck banner2.png" id="3_jquen"]
+
+[node name="Menu" type="Node2D"]
+script = ExtResource("1_4bmmr")
+
+[node name="SlotMachineMenu" parent="." instance=ExtResource("1_e4km4")]
+offset = Vector2(90, 18)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+show_behind_parent = true
+offset_left = -482.0
+offset_top = -232.0
+offset_right = 382.0
+offset_bottom = 194.0
+color = Color(0.491264, 0.28511, 0.153091, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_left = -184.0
+offset_top = -48.0
+offset_right = 25.0
+offset_bottom = 74.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Play"
+
+[node name="About" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "About"
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-76, -8)
+scale = Vector2(0.0941406, 0.0944444)
+texture = ExtResource("3_jquen")
+offset = Vector2(0, -600)
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/About" to="." method="_on_about_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

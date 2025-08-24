@@ -11,13 +11,17 @@ config_version=5
 [application]
 
 config/name="GameJam45"
-run/main_scene="res://Scene/Stages/stage0.tscn"
+run/main_scene="res://Scene/UI/menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
 [global_group]
 
 Player=""
+
+[gui]
+
+theme/default_font_multichannel_signed_distance_field=true
 
 [input]
 

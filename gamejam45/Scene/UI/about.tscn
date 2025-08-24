@@ -1,0 +1,75 @@
+[gd_scene load_steps=5 format=3 uid="uid://c5fampk6s5ls2"]
+
+[ext_resource type="Script" path="res://Scripts/UI/about.gd" id="1_udxfp"]
+[ext_resource type="PackedScene" uid="uid://dqgnu7ipoxhlj" path="res://Prefab/UI/SlotMachineMenu.tscn" id="1_xm5ue"]
+[ext_resource type="PackedScene" uid="uid://bior4r7toodxy" path="res://Prefab/Environment/FakeGreenButton.tscn" id="2_5uhmq"]
+[ext_resource type="PackedScene" uid="uid://ds6p2pnkwrk5f" path="res://Prefab/Environment/FakeRedButton.tscn" id="3_go1ul"]
+
+[node name="About" type="Node2D"]
+script = ExtResource("1_udxfp")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -1810.0
+offset_top = -1297.0
+offset_right = 2220.0
+offset_bottom = 1229.0
+color = Color(0.490196, 0.286275, 0.152941, 1)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3.2, 3.2)
+
+[node name="SlotMachineMenu" parent="." instance=ExtResource("1_xm5ue")]
+position = Vector2(0, 12)
+offset = Vector2(-5, 0)
+
+[node name="Label" type="Label" parent="."]
+top_level = true
+offset_left = -87.0
+offset_top = -91.0
+offset_right = 88.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 9
+text = "You are Lady Luck, the one who holds fate in your hands. Tonight, the desperate gambler Tim is betting everything in a last-ditch attempt to escape his crushing debt. You alone can tip the scales either blessing him with fortune or watching him fall deeper into ruin. But beware... the house doesn't play fair."
+autowrap_mode = 2
+justification_flags = 227
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = -93.0
+offset_top = -97.0
+offset_right = 94.0
+offset_bottom = 74.0
+color = Color(0, 0, 0, 0.658824)
+
+[node name="FakeGreenButton" parent="." instance=ExtResource("2_5uhmq")]
+position = Vector2(133, -12)
+scale = Vector2(2, 2)
+
+[node name="FakeRedButton" parent="." instance=ExtResource("3_go1ul")]
+position = Vector2(-131, -12)
+scale = Vector2(2, 2)
+
+[node name="Label2" type="Label" parent="."]
+offset_left = -152.0
+offset_top = -2.0
+offset_right = -110.0
+offset_bottom = 21.0
+theme_override_colors/font_color = Color(1, 0.776471, 0, 1)
+text = "Fail!?"
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 100.0
+offset_top = -2.0
+offset_right = 165.0
+offset_bottom = 21.0
+theme_override_colors/font_color = Color(1, 0.776471, 0, 1)
+text = "Gamble!"
+
+[node name="Button" type="Button" parent="."]
+offset_left = -52.0
+offset_top = 76.0
+offset_right = 53.0
+offset_bottom = 98.0
+theme_override_font_sizes/font_size = 10
+text = "Back"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
